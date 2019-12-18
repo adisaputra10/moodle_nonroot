@@ -1,0 +1,10 @@
+s:341:"Coding error detected, it must be fixed by a programmer: A lock was created but not released at:
+[dirroot]/lib/cronlib.php on line 99
+
+ Code should look like:
+
+ $factory = \core\lock\lock_config::get_lock_factory('type');
+ $lock = $factory-&gt;get_lock(Resource id #1976);
+ $lock-&gt;release();  // Locks must ALWAYS be released like this.
+
+";
